@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import StyledComponentsRegistry from "./registry";
 
-import Header from "./components/layout/header/header";
-import Footer from "./components/layout/footer/footer";
+import { Footer, Header } from "./components";
 
 const font = Nunito({ subsets: ["latin"] });
 

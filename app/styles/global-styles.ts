@@ -19,4 +19,8 @@ body {
 h1, h2, h3, h4, h5,h6, a, ul, li, span, p {
   color: ${(props) => props.theme.colors.primary};
 }
+
+h1 {
+  font-size: ${(props) => props.theme.fontSizes.xl};
+}
 `;

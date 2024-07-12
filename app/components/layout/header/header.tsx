@@ -1,11 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 
 import { StyledHeader } from "./header.styled";
-import Link from "next/link";
 
-export default function Header() {
+export function Header() {
   return (
     <StyledHeader>
       <Link href="/">

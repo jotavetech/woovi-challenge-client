@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import { StyledFooter } from "./footer.styled";
 
-export default function Footer() {
+export function Footer() {
   return (
     <StyledFooter>
       <Image
