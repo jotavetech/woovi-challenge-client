@@ -18,6 +18,14 @@ const theme = {
     option: "10px",
     button: "8px",
   },
+  fontSizes: {
+    xl: "2.4rem",
+    lg: "1.8rem",
+    md: "1.6rem",
+    sm: "1.4rem",
+  },
 };
+
+export type ThemeProps = typeof theme;
 
 export default theme;

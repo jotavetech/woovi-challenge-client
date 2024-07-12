@@ -7,7 +7,9 @@ import {
   StyleSheetManager,
   ThemeProvider,
 } from "styled-components";
+
 import theme from "./styles/theme";
+import { GlobalStyle } from "./styles/global-styles";
 
 export default function StyledComponentsRegistry({
   children,
@@ -27,7 +29,10 @@ export default function StyledComponentsRegistry({
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider theme={theme}>
+        {children}
+        <GlobalStyle />
+      </ThemeProvider>
     </StyleSheetManager>
   );
 }

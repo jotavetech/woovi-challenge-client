@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import StyledComponentsRegistry from "./registry";
 
+import Header from "./components/layout/header/header";
+import Footer from "./components/layout/footer/footer";
+
 const font = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -15,7 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
