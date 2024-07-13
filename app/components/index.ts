@@ -1,5 +1,6 @@
 export { Footer } from "./layout/footer/footer";
 export { Header } from "./layout/header/header";
+export { Container } from "./layout/container/container";
 
 export { Title } from "./shared/title/title";
 

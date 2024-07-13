@@ -1,14 +1,15 @@
 "use client";
 
-import { Title, PaymentMethodList } from "./components";
+import { PaymentMethodList, Container } from "./components";
 
 import paymentOptionsData from "./data/payment-options.json";
 
 export default function Home() {
   return (
     <main>
-      <Title>João, como você quer pagar?</Title>
-      <PaymentMethodList paymentOptions={paymentOptionsData} />
+      <Container title="João, como você quer pagar?">
+        <PaymentMethodList paymentOptions={paymentOptionsData} />
+      </Container>
     </main>
   );
 }
