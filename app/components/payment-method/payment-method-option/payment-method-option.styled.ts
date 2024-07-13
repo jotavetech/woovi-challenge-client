@@ -4,7 +4,7 @@ interface StyledPaymentMethodOptionProps {
   isActivated?: boolean;
 }
 
-export const StyledPaymentMethodOption = styled.li<StyledPaymentMethodOptionProps>`
+export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionProps>`
   cursor: pointer;
   position: relative;
   transition: all 0.2s;
@@ -35,70 +35,66 @@ export const StyledPaymentMethodOption = styled.li<StyledPaymentMethodOptionProp
     border-width: 2px;
     border-radius: 0 0 10px 10px;
   }
+`;
 
-  > .option-details {
+export const OptionDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > div {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 
-    > div {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-
-      span {
-        font-size: ${(props) => props.theme.fontSizes.xl};
-        font-weight: 800;
-      }
-
-      p {
-        font-size: ${(props) => props.theme.fontSizes.xl};
-        font-weight: 600;
-      }
+    span {
+      font-size: ${(props) => props.theme.fontSizes.xl};
+      font-weight: 800;
     }
-  }
-
-  > p {
-    line-height: 20px;
-  }
-
-  .total-price {
-    font-size: ${(props) => props.theme.fontSizes.md};
-    font-weight: 600;
-    color: ${(props) => props.theme.colors.secondary};
-  }
-
-  .special-promo {
-    color: ${(props) => props.theme.colors.thirdiary};
-    font-weight: 600;
-  }
-
-  .label {
-    top: -14px;
-    position: absolute;
-    background-color: ${(props) => props.theme.backgroundColor.label};
-    font-size: ${(props) => props.theme.fontSizes.lg};
-    font-weight: 800;
-    padding: 0.5rem 2rem;
-    border-radius: 10rem;
-  }
-
-  .tag {
-    margin-top: 1.1rem;
-    position: relative;
 
     p {
-      position: absolute;
-      color: white;
-      bottom: 0.85rem;
-      left: 1rem;
-      font-size: ${(props) => props.theme.fontSizes.sm};
+      font-size: ${(props) => props.theme.fontSizes.xl};
+      font-weight: 600;
     }
+  }
+`;
 
-    img {
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+export const Label = styled.p`
+  top: -14px;
+  position: absolute;
+  background-color: ${(props) => props.theme.backgroundColor.label};
+  font-size: ${(props) => props.theme.fontSizes.lg};
+  font-weight: 800;
+  padding: 0.4rem 2rem;
+  border-radius: 10rem;
+`;
+
+export const SpecialDescription = styled.p`
+  color: ${(props) => props.theme.colors.thirdiary};
+  font-weight: 600;
+`;
+
+export const Description = styled.p`
+  font-size: ${(props) => props.theme.fontSizes.md};
+  font-weight: 600;
+  color: ${(props) => props.theme.colors.secondary};
+`;
+
+export const Tag = styled.div`
+  margin-top: 1.1rem;
+  position: relative;
+
+  p {
+    position: absolute;
+    color: white;
+    bottom: 1rem;
+    left: 0.5rem;
+    font-size: ${(props) => props.theme.fontSizes.sm};
+  }
+
+  img {
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 `;

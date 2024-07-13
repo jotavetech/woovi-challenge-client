@@ -5,7 +5,16 @@ import formatCurrency from "@/app/utils/formatCurrency";
 import { PaymentOptionType } from "@/app/types";
 
 import { PaymentMethodCheckmark } from "../payment-method-checkmark/payment-method-checkmark";
-import { StyledPaymentMethodOption } from "./payment-method-option.styled";
+
+import {
+  PaymentMethodOptionWrapper,
+  OptionDetails,
+  Label,
+  SpecialDescription,
+  Description,
+  Tag,
+} from "./payment-method-option.styled";
+
 import Image from "next/image";
 
 interface PaymentMethodOptionProps {
@@ -19,36 +28,39 @@ export function PaymentMethodOption({
   isActivated,
   onSelect,
 }: PaymentMethodOptionProps) {
-  const { price, paymentTimes } = paymentOption;
+  const { price, installments } = paymentOption;
 
   const formatedPrice = formatCurrency(price);
-  const installmentPrice = formatCurrency(price / paymentTimes);
+  const installmentPrice = formatCurrency(price / installments);
 
-  const firstOption = paymentTimes === 1;
-  const secondOption = paymentTimes === 2;
-  const bestOption = paymentTimes === 4;
+  const oneInstallment = installments === 1;
+  const twoInstallments = installments === 2;
+  const bestInstallmentOption = installments === 4;
 
   return (
-    <StyledPaymentMethodOption isActivated={isActivated} onClick={onSelect}>
-      {firstOption && <p className="label">Pix</p>}
-      {secondOption && secondOption && <p className="label">Pix Parcelado</p>}
-      <div className="option-details">
+    <PaymentMethodOptionWrapper isActivated={isActivated} onClick={onSelect}>
+      {oneInstallment && <Label>Pix</Label>}
+      {twoInstallments && <Label>Pix Parcelado</Label>}
+
+      <OptionDetails>
         <div>
-          <span>{paymentTimes}x</span>
+          <span>{installments}x</span>
           <p>{installmentPrice}</p>
         </div>
         <PaymentMethodCheckmark isActivated={isActivated} />
-      </div>
-      {firstOption ? (
-        <p className="special-promo">
+      </OptionDetails>
+
+      {oneInstallment ? (
+        <SpecialDescription>
           Ganhe <b>3%</b> de Cashback
-        </p>
+        </SpecialDescription>
       ) : (
-        <p className="total-price">Total: {formatedPrice}</p>
+        <Description>Total: {formatedPrice}</Description>
       )}
-      {(firstOption || bestOption) && (
-        <p className="tag">
-          {firstOption ? (
+
+      {(oneInstallment || bestInstallmentOption) && (
+        <Tag>
+          {oneInstallment ? (
             <p>
               <b>🤑 R$ 300,00</b> de volta no seu Pix na hora
             </p>
@@ -58,8 +70,8 @@ export function PaymentMethodOption({
             </p>
           )}
           <Image src="./tag.svg" alt="Tag" width={10} height={10} />
-        </p>
+        </Tag>
       )}
-    </StyledPaymentMethodOption>
+    </PaymentMethodOptionWrapper>
   );
 }

@@ -1,30 +1,30 @@
 [
   {
-    "paymentTimes": 1,
+    "installments": 1,
     "price": 30500
   },
   {
-    "paymentTimes": 2,
+    "installments": 2,
     "price": 30600
   },
   {
-    "paymentTimes": 3,
+    "installments": 3,
     "price": 30620
   },
   {
-    "paymentTimes": 4,
+    "installments": 4,
     "price": 30900
   },
   {
-    "paymentTimes": 5,
+    "installments": 5,
     "price": 31500
   },
   {
-    "paymentTimes": 6,
+    "installments": 6,
     "price": 31699.98
   },
   {
-    "paymentTimes": 7,
+    "installments": 7,
     "price": 31800
   }
 ]

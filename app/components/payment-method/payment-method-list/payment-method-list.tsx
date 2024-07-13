@@ -13,15 +13,17 @@ interface PaymentMethodListProps {
 }
 
 export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [selectedInstallmentsOption, setSelectedInstallmentsOption] = useState<
+    number | null
+  >(null);
 
-  const handleSelectOption = (paymentTimes: number) => {
-    if (selectedOption === paymentTimes) {
-      setSelectedOption(null);
+  const handleSelectOption = (installments: number) => {
+    if (selectedInstallmentsOption === installments) {
+      setSelectedInstallmentsOption(null);
       return;
     }
 
-    setSelectedOption(paymentTimes);
+    setSelectedInstallmentsOption(installments);
   };
 
   return (
@@ -30,8 +32,10 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
         <PaymentMethodOption
           key={i}
           paymentOption={paymentOption}
-          isActivated={selectedOption === paymentOption.paymentTimes}
-          onSelect={() => handleSelectOption(paymentOption.paymentTimes)}
+          isActivated={
+            selectedInstallmentsOption === paymentOption.installments
+          }
+          onSelect={() => handleSelectOption(paymentOption.installments)}
         />
       ))}
     </StyledPaymentMethodList>
