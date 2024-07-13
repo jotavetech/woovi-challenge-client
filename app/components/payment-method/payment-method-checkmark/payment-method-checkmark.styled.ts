@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface StyledPaymentMethodCheckmarkProps {
+interface PaymentMethodCheckmarkWrapperProps {
   isActivated?: boolean;
 }
 
-export const StyledPaymentMethodCheckmark = styled.div<StyledPaymentMethodCheckmarkProps>`
+export const PaymentMethodCheckmarkWrapper = styled.div<PaymentMethodCheckmarkWrapperProps>`
   width: 2.6rem;
   height: 2.6rem;
   display: flex;

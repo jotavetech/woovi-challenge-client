@@ -8,10 +8,10 @@ import { PaymentMethodCheckmark } from "../payment-method-checkmark/payment-meth
 
 import {
   PaymentMethodOptionWrapper,
-  OptionDetails,
-  Label,
   SpecialDescription,
+  OptionDetails,
   Description,
+  Label,
   Tag,
 } from "./payment-method-option.styled";
 

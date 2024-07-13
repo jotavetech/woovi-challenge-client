@@ -2,7 +2,7 @@
 
 import { PaymentOptionsType } from "@/app/types";
 
-import { StyledPaymentMethodList } from "./payment-method-list.styled";
+import { PaymentMethodListWrapper } from "./payment-method-list.styled";
 
 import { PaymentMethodOption } from "../..";
 
@@ -27,7 +27,7 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
   };
 
   return (
-    <StyledPaymentMethodList>
+    <PaymentMethodListWrapper>
       {paymentOptions.map((paymentOption, i) => (
         <PaymentMethodOption
           key={i}
@@ -38,6 +38,6 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
           onSelect={() => handleSelectOption(paymentOption.installments)}
         />
       ))}
-    </StyledPaymentMethodList>
+    </PaymentMethodListWrapper>
   );
 }
