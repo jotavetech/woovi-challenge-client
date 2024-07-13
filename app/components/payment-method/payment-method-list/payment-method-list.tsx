@@ -3,15 +3,18 @@
 import { PaymentOptionsType } from "@/app/types";
 
 import {
-  PaymentMethodButton,
   PaymentMethodButtonWrapper,
   PaymentMethodListWrapper,
+  PaymentMethodButton,
 } from "./payment-method-list.styled";
 
 import { PaymentMethodOption } from "../..";
 
 import { useState } from "react";
+
 import { ArrowRight } from "lucide-react";
+
+import Link from "next/link";
 
 interface PaymentMethodListProps {
   paymentOptions: PaymentOptionsType;
@@ -48,9 +51,11 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
 
       {selectedInstallmentsOption && (
         <PaymentMethodButtonWrapper>
-          <PaymentMethodButton>
-            Continuar em {selectedInstallmentsOption}x <ArrowRight />
-          </PaymentMethodButton>
+          <Link href={`/pix-payment/${selectedInstallmentsOption}`}>
+            <PaymentMethodButton>
+              Continuar em {selectedInstallmentsOption}x <ArrowRight />
+            </PaymentMethodButton>
+          </Link>
         </PaymentMethodButtonWrapper>
       )}
     </PaymentMethodListWrapper>

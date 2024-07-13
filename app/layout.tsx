@@ -4,7 +4,10 @@ import StyledComponentsRegistry from "./registry";
 
 import { Footer, Header } from "./components";
 
-const font = Nunito({ subsets: ["latin"] });
+const font = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",

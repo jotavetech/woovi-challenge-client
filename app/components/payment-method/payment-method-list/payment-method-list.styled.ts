@@ -4,10 +4,6 @@ export const PaymentMethodListWrapper = styled.div`
   width: 100%;
   margin-top: 3.2rem;
   position: relative;
-
-  ul {
-    list-style: none;
-  }
 `;
 
 export const PaymentMethodButtonWrapper = styled.div`

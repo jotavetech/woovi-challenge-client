@@ -1,0 +1,48 @@
+"use client";
+
+import { Container, PixPaymentSection } from "@/app/components";
+
+import paymentOptions from "@/app/data/payment-options.json";
+
+import formatCurrency from "@/app/utils/formatCurrency";
+
+import { useRouter } from "next/navigation";
+
+import { useEffect } from "react";
+
+interface PixPaymentProps {
+  params: { installments: number };
+}
+
+export default function PixPayment({ params }: PixPaymentProps) {
+  const installments = +params.installments;
+
+  const paymentOption = paymentOptions.find(
+    (option) => +option.installments === installments
+  );
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!paymentOption) return router.push("/");
+  }, [router, paymentOption]);
+
+  if (!paymentOption) return null;
+
+  const titleMessage =
+    installments === 1
+      ? `Pague o valor único de ${formatCurrency(paymentOption.price)} pelo Pix`
+      : `Pague a entrada de ${formatCurrency(
+          paymentOption.price / installments
+        )} pelo Pix`;
+
+  if (paymentOption) {
+    return (
+      <main>
+        <Container title={titleMessage}>
+          <PixPaymentSection installments={installments} />
+        </Container>
+      </main>
+    );
+  }
+}

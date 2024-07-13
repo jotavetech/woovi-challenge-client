@@ -13,6 +13,7 @@
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-qr-code": "^2.0.15",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
