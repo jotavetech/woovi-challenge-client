@@ -6,6 +6,7 @@ import {
   PixPaymentCopybutton,
   PixPaymentQrcodeWrapper,
   PixPaymentSectionWrapper,
+  PixPaymentValideDate,
 } from "./pix-payment-section.styled";
 
 import { Copy } from "lucide-react";
@@ -19,7 +20,7 @@ interface PixPaymentSectionProps {
 export function PixPaymentSection({ installments }: PixPaymentSectionProps) {
   const [copyButtonDisabled, setCopyButtonDisabled] = useState(false);
   const [copyButtonMessage, setCopyButtonMessage] = useState(
-    "Clique para copiar o QRCODE"
+    "Clique para copiar o QR CODE"
   );
 
   const paymentPixUrl = `https://pix.example.com/${installments}`;
@@ -27,11 +28,11 @@ export function PixPaymentSection({ installments }: PixPaymentSectionProps) {
   const copyPixUrl = (url: string) => {
     navigator.clipboard.writeText(url);
 
-    setCopyButtonMessage("QRCODE copiado!");
+    setCopyButtonMessage("QR CODE copiado!");
     setCopyButtonDisabled(true);
 
     setTimeout(() => {
-      setCopyButtonMessage("Clique para copiar o QRCODE");
+      setCopyButtonMessage("Clique para copiar o QR CODE");
       setCopyButtonDisabled(false);
     }, 3000);
   };
@@ -48,6 +49,10 @@ export function PixPaymentSection({ installments }: PixPaymentSectionProps) {
         {copyButtonMessage}
         <Copy />
       </PixPaymentCopybutton>
+      <PixPaymentValideDate>
+        <span>Prazo de pagamento:</span>
+        <p>15/07/2024 - 08:17</p>
+      </PixPaymentValideDate>
     </PixPaymentSectionWrapper>
   );
 }

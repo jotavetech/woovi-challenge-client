@@ -16,6 +16,10 @@ body {
   font-size: 1.6rem;
 }
 
+b {
+  font-weight: 800;
+}
+
 a {
   text-decoration: none;
   color: inherit;

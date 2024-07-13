@@ -1,6 +1,10 @@
 "use client";
 
-import { Container, PixPaymentSection } from "@/app/components";
+import {
+  Container,
+  PixPaymentSection,
+  InstallmentList,
+} from "@/app/components";
 
 import paymentOptions from "@/app/data/payment-options.json";
 
@@ -15,13 +19,13 @@ interface PixPaymentProps {
 }
 
 export default function PixPayment({ params }: PixPaymentProps) {
+  const router = useRouter();
+
   const installments = +params.installments;
 
   const paymentOption = paymentOptions.find(
     (option) => +option.installments === installments
   );
-
-  const router = useRouter();
 
   useEffect(() => {
     if (!paymentOption) return router.push("/");
@@ -41,6 +45,11 @@ export default function PixPayment({ params }: PixPaymentProps) {
       <main>
         <Container title={titleMessage}>
           <PixPaymentSection installments={installments} />
+          <InstallmentList
+            phase={1}
+            installments={installments}
+            price={paymentOption.price}
+          />
         </Container>
       </main>
     );
