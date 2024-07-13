@@ -4,6 +4,7 @@ import {
   Container,
   PixPaymentSection,
   InstallmentList,
+  PaymentFaq,
 } from "@/app/components";
 
 import paymentOptions from "@/app/data/payment-options.json";
@@ -50,6 +51,7 @@ export default function PixPayment({ params }: PixPaymentProps) {
             installments={installments}
             price={paymentOption.price}
           />
+          <PaymentFaq price={paymentOption.price} />
         </Container>
       </main>
     );
