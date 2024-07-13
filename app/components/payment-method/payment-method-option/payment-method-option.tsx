@@ -38,7 +38,7 @@ export function PaymentMethodOption({
   const bestInstallmentOption = installments === 4;
 
   return (
-    <PaymentMethodOptionWrapper isActivated={isActivated} onClick={onSelect}>
+    <PaymentMethodOptionWrapper $isActivated={isActivated} onClick={onSelect}>
       {oneInstallment && <Label>Pix</Label>}
       {twoInstallments && <Label>Pix Parcelado</Label>}
 

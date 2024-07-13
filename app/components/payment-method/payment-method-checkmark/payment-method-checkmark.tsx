@@ -9,7 +9,7 @@ export function PaymentMethodCheckmark({
   isActivated,
 }: PaymentMethodCheckmarkProps) {
   return (
-    <PaymentMethodCheckmarkWrapper isActivated={isActivated}>
+    <PaymentMethodCheckmarkWrapper $isActivated={isActivated}>
       {isActivated && (
         <Check style={{ color: "#fff", width: "12px", height: "12px" }} />
       )}

@@ -23,7 +23,7 @@ export function InstallmentListItem({
   return (
     <InstallmentListItemWrapper>
       <InstallmentListDetail>
-        <InstallmentCheckmark $active={active} $paid={paid}>
+        <InstallmentCheckmark $isActive={active} $isPaid={paid}>
           {paid && <Check />}
         </InstallmentCheckmark>
         {installment}

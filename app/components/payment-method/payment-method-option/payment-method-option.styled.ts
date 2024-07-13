@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface StyledPaymentMethodOptionProps {
-  isActivated?: boolean;
+  $isActivated?: boolean;
 }
 
 export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionProps>`
@@ -9,17 +9,17 @@ export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionPro
   position: relative;
   transition: all 0.2s;
   border-style: solid;
-  border-width: ${(props) => (props.isActivated ? "2px" : "2px 2px 0 2px")};
+  border-width: ${(props) => (props.$isActivated ? "2px" : "2px 2px 0 2px")};
   list-style: none;
   padding: 2rem;
 
   border-color: ${(props) =>
-    props.isActivated
+    props.$isActivated
       ? props.theme.backgroundColor.checked
       : props.theme.borderColor.primary};
 
   background-color: ${(props) =>
-    props.isActivated && props.theme.backgroundColor.selected};
+    props.$isActivated && props.theme.backgroundColor.selected};
 
   &:first-child {
     margin-bottom: 3.4rem;

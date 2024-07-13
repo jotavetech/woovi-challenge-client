@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 interface InstallmentCheckmarkProps {
-  $active: boolean;
-  $paid: boolean;
+  $isActive: boolean;
+  $isPaid: boolean;
 }
 
 export const InstallmentListItemWrapper = styled.li`
@@ -40,11 +40,11 @@ export const InstallmentCheckmark = styled.div<InstallmentCheckmarkProps>`
   border-radius: 50%;
   border: 2px solid
     ${(props) =>
-      props.$active || props.$paid
+      props.$isActive || props.$isPaid
         ? props.theme.borderColor.thirdiary
         : props.theme.borderColor.primary};
   background-color: ${(props) =>
-    props.$paid && props.theme.backgroundColor.checked};
+    props.$isPaid && props.theme.backgroundColor.checked};
 
   display: flex;
   justify-content: center;
