@@ -7,6 +7,7 @@ const theme = {
   backgroundColor: {
     tag: "#133A6F",
     "button-primary": "#133A6F",
+    "button-hover": "#0F2A4B",
     selected: "#F4FBF9",
     checked: "#03D69D",
     label: "#E5E5E5",
