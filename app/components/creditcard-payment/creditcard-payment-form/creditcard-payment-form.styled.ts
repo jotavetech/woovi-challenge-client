@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const InstallmentListWrapper = styled.ul`
+export const CreditCardPaymentFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  width: 100%;
 `;

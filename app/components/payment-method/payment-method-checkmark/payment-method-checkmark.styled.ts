@@ -5,8 +5,8 @@ interface PaymentMethodCheckmarkWrapperProps {
 }
 
 export const PaymentMethodCheckmarkWrapper = styled.div<PaymentMethodCheckmarkWrapperProps>`
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 26px;
+  height: 26px;
   display: flex;
   justify-content: center;
   align-items: center;

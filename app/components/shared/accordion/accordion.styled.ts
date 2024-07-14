@@ -8,7 +8,7 @@ export const AccordionWrapper = styled.div`
 `;
 
 export const AccordionItem = styled.div`
-  padding: 2rem 0;
+  padding: 20px 0;
 `;
 
 export const AccordionIcon = styled.div`
@@ -26,7 +26,7 @@ export const AccordionTitle = styled.div`
 `;
 
 export const AccordionDescription = styled.p`
-  margin-top: 1rem;
+  margin-top: 10px;
   font-size: ${(props) => props.theme.fontSizes.sm};
   color: ${(props) => props.theme.colors.primary};
   font-weight: 600;

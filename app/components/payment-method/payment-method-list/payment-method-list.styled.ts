@@ -2,27 +2,27 @@ import styled from "styled-components";
 
 export const PaymentMethodListWrapper = styled.div`
   width: 100%;
-  margin-top: 3.2rem;
+  margin-top: 32px;
   position: relative;
 `;
 
 export const PaymentMethodButtonWrapper = styled.div`
   position: fixed;
-  bottom: 2rem;
+  bottom: 20px;
   width: 100%;
-  max-width: 42.9rem;
-  padding: 0 2rem;
+  max-width: 429px;
+  padding: 0 20px;
   left: 50%;
   transform: translateX(-50%);
 `;
 
 export const PaymentMethodButton = styled.button`
   width: 100%;
-  height: 3.9rem;
-  padding: 1rem;
+  height: 40px;
+  padding: 10px;
   cursor: pointer;
   border: none;
-  border-radius: 0.8rem;
+  border-radius: 8px;
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 600;
   background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
@@ -31,7 +31,7 @@ export const PaymentMethodButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 5px;
 
   &:hover {
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};

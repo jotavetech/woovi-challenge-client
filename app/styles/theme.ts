@@ -22,10 +22,10 @@ const theme = {
     button: "8px",
   },
   fontSizes: {
-    xl: "2.4rem",
-    lg: "1.8rem",
-    md: "1.6rem",
-    sm: "1.4rem",
+    xl: "24px",
+    lg: "18px",
+    md: "16px",
+    sm: "14px",
   },
 };
 

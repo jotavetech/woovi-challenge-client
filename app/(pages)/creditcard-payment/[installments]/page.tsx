@@ -8,6 +8,7 @@ import { useEffect } from "react";
 
 import {
   Container,
+  CreditCardPaymentForm,
   Identifier,
   InstallmentList,
   PaymentFaq,
@@ -25,8 +26,6 @@ export default function CreditCardPaymentPage({
   const router = useRouter();
   const installments = +params.installments;
 
-  if (installments <= 1) return router.push("/");
-
   const paymentOption = paymentOptions.find(
     (option) => +option.installments === installments
   );
@@ -37,6 +36,8 @@ export default function CreditCardPaymentPage({
 
   if (!paymentOption) return null;
 
+  if (installments <= 1) return router.push("/");
+
   const titleMessage = `João, pague o restante em ${
     installments - 1
   }x no cartão`;
@@ -44,6 +45,10 @@ export default function CreditCardPaymentPage({
   return (
     <main>
       <Container title={titleMessage}>
+        <CreditCardPaymentForm
+          installments={installments}
+          price={paymentOption.price}
+        />
         <InstallmentList
           phase={2}
           installments={installments}

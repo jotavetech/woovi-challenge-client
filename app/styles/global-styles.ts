@@ -7,13 +7,10 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 
-html {
-  font-size: 62.5%;
-}
 
 body {
   font-family: "Nunito", sans-serif;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 b {

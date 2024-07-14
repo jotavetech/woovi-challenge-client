@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const IdentifierWrapper = styled.div`
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 20px;
   text-align: center;
 `;
 

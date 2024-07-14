@@ -12,10 +12,10 @@ export const InstallmentListItemWrapper = styled.li`
 
   &::before {
     content: "";
-    left: 0.6rem;
+    left: 6px;
     position: absolute;
-    bottom: -2rem;
-    width: 0.4rem;
+    bottom: -20px;
+    width: 4px;
     height: 100%;
     background-color: ${(props) => props.theme.borderColor.primary};
   }
@@ -27,7 +27,7 @@ export const InstallmentListItemWrapper = styled.li`
 
 export const InstallmentListDetail = styled.div`
   display: flex;
-  gap: 0.8rem;
+  gap: 8px;
   align-items: center;
   font-weight: 600;
   font-size: ${(props) => props.theme.fontSizes.lg};
@@ -35,8 +35,8 @@ export const InstallmentListDetail = styled.div`
 `;
 
 export const InstallmentCheckmark = styled.div<InstallmentCheckmarkProps>`
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid
     ${(props) =>

@@ -1,29 +1,29 @@
 import styled from "styled-components";
 
 export const PixPaymentSectionWrapper = styled.div`
-  margin: 2rem auto 2rem auto;
+  margin: 20px auto 20px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 20px;
 `;
 
 export const PixPaymentQrcodeWrapper = styled.div`
-  width: 35rem;
-  height: 35rem;
+  width: 350px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0.2rem solid ${(props) => props.theme.borderColor.thirdiary};
-  border-radius: 1rem;
+  border: 2px solid ${(props) => props.theme.borderColor.thirdiary};
+  border-radius: 10px;
 `;
 
 export const PixPaymentCopybutton = styled.button`
-  width: 31rem;
-  height: 3.9rem;
+  width: 310px;
+  height: 40px;
   cursor: pointer;
   border: none;
-  border-radius: 0.8rem;
+  border-radius: 8px;
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 600;
   background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
@@ -31,7 +31,7 @@ export const PixPaymentCopybutton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 5px;
 
   &:hover {
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};

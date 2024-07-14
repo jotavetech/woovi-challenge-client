@@ -13,3 +13,5 @@ export { PixPaymentSection } from "./pix-payment/pix-payment-section/pix-payment
 
 export { InstallmentList } from "./payment-details/installment-list/installment-list";
 export { PaymentFaq } from "./payment-details/payment-faq/payment-faq";
+
+export { CreditCardPaymentForm } from "./creditcard-payment/creditcard-payment-form/creditcard-payment-form";

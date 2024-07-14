@@ -11,7 +11,7 @@ export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionPro
   border-style: solid;
   border-width: ${(props) => (props.$isActivated ? "2px" : "2px 2px 0 2px")};
   list-style: none;
-  padding: 2rem;
+  padding: 20px;
 
   border-color: ${(props) =>
     props.$isActivated
@@ -22,7 +22,7 @@ export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionPro
     props.$isActivated && props.theme.backgroundColor.selected};
 
   &:first-child {
-    margin-bottom: 3.4rem;
+    margin-bottom: 34px;
     border-width: 2px;
     border-radius: 10px;
   }
@@ -45,7 +45,7 @@ export const OptionDetails = styled.div`
   > div {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 5px;
 
     span {
       font-size: ${(props) => props.theme.fontSizes.xl};
@@ -65,8 +65,8 @@ export const Label = styled.p`
   background-color: ${(props) => props.theme.backgroundColor.label};
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 800;
-  padding: 0.4rem 2rem;
-  border-radius: 10rem;
+  padding: 2px 20px;
+  border-radius: 100px;
 `;
 
 export const SpecialDescription = styled.p`
@@ -81,14 +81,14 @@ export const Description = styled.p`
 `;
 
 export const Tag = styled.div`
-  margin-top: 1.1rem;
+  margin-top: 11px;
   position: relative;
 
   p {
     position: absolute;
     color: white;
-    bottom: 1rem;
-    left: 0.5rem;
+    bottom: 12px;
+    left: 10px;
     font-size: ${(props) => props.theme.fontSizes.sm};
   }
 
