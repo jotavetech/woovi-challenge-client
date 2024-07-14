@@ -3,6 +3,7 @@ const theme = {
     primary: "#4D4D4D",
     secondary: "#AFAFAF",
     thirdiary: "#03D69D",
+    error: "#FF0000",
   },
   backgroundColor: {
     tag: "#133A6F",
