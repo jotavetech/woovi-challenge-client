@@ -1,18 +1,18 @@
 "use client";
 
-import Image from "next/image";
+import {
+  AnimatedConfirmationWrapper,
+  AnimatedConfirmationIcon,
+} from "./animated-confirmation.styled";
 
-import { AnimatedConfirmationWrapper } from "./animated-confirmation.styled";
+import { Check } from "lucide-react";
 
 export function AnimatedConfirmation() {
   return (
     <AnimatedConfirmationWrapper>
-      <Image
-        src="/confirmation.gif"
-        width={150}
-        height={150}
-        alt="An animated gif for confirm the payment."
-      />
+      <AnimatedConfirmationIcon>
+        <Check width={150} height={150} />
+      </AnimatedConfirmationIcon>
     </AnimatedConfirmationWrapper>
   );
 }
