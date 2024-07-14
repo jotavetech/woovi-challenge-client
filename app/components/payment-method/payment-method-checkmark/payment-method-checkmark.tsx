@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+
 import { PaymentMethodCheckmarkWrapper } from "./payment-method-checkmark.styled";
 
 interface PaymentMethodCheckmarkProps {

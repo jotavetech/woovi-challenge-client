@@ -34,7 +34,7 @@ export function InputField({
         error={hasError}
         sx={{
           "& *": {
-            borderRadius: "8px",
+            borderRadius: "9px",
             fontWeight: 500,
             color: "#4D4D4D",
           },

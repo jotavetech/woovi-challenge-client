@@ -13,16 +13,16 @@ import { Copy } from "lucide-react";
 import { useState } from "react";
 
 interface PixPaymentSectionProps {
-  installments: number;
+  paymentId: string;
 }
 
-export function PixPaymentSection({ installments }: PixPaymentSectionProps) {
+export function PixPaymentSection({ paymentId }: PixPaymentSectionProps) {
   const [copyButtonDisabled, setCopyButtonDisabled] = useState(false);
   const [copyButtonMessage, setCopyButtonMessage] = useState(
     "Clique para copiar o QR CODE"
   );
 
-  const paymentPixUrl = `https://pix.example.com/${installments}`;
+  const paymentPixUrl = `https://woovi-server.vercel.app/pay/${paymentId}`;
 
   const copyPixUrl = (url: string) => {
     navigator.clipboard.writeText(url);

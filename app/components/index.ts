@@ -2,12 +2,12 @@ export { Footer } from "./layout/footer/footer";
 export { Header } from "./layout/header/header";
 export { Container } from "./layout/container/container";
 
-export { Title } from "./shared/title/title";
-export { Accordion } from "./shared/accordion/accordion";
-export { Identifier } from "./shared/identifier/identifier";
-export { InputField } from "./shared/input-field/input-field";
-export { PaymentValidDate } from "./shared/payment-valid-date/payment-valid-date";
-export { AnimatedConfirmation } from "./shared/animated-confirmation/animated-confirmation";
+export { Title } from "./utils/title/title";
+export { Accordion } from "./utils/accordion/accordion";
+export { Identifier } from "./utils/identifier/identifier";
+export { InputField } from "./utils/input-field/input-field";
+export { PaymentValidDate } from "./utils/payment-valid-date/payment-valid-date";
+export { AnimatedConfirmation } from "./utils/animated-confirmation/animated-confirmation";
 
 export { PaymentMethodList } from "./payment-method/payment-method-list/payment-method-list";
 export { PaymentMethodOption } from "./payment-method/payment-method-option/payment-method-option";

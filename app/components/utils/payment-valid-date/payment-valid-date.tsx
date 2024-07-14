@@ -6,7 +6,7 @@ export function PaymentValidDate() {
   return (
     <PaymentValidDateWrapper>
       <span>Prazo de pagamento:</span>
-      <p>15/07/2024 - 08:17</p>
+      <p>25/07/2024 - 08:00</p>
     </PaymentValidDateWrapper>
   );
 }

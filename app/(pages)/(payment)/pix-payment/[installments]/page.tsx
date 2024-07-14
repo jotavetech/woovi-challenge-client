@@ -9,26 +9,20 @@ import {
   PaymentValidDate,
 } from "@/app/components";
 
-import paymentOptions from "@/app/data/payment-options.json";
-
+import findPaymentOption from "@/app/utils/find-payment-option";
 import formatCurrency from "@/app/utils/formatCurrency";
 
 import { useRouter } from "next/navigation";
-
 import { useEffect } from "react";
 
 interface PixPaymentProps {
-  params: { installments: number };
+  params: { installments: string };
 }
 
 export default function PixPayment({ params }: PixPaymentProps) {
   const router = useRouter();
 
-  const installments = +params.installments;
-
-  const paymentOption = paymentOptions.find(
-    (option) => +option.installments === installments
-  );
+  const paymentOption = findPaymentOption(params.installments);
 
   useEffect(() => {
     if (!paymentOption) return router.push("/");
@@ -36,27 +30,27 @@ export default function PixPayment({ params }: PixPaymentProps) {
 
   if (!paymentOption) return null;
 
+  const { installments, price } = paymentOption;
+
   const titleMessage =
     installments === 1
-      ? `Pague o valor único de ${formatCurrency(paymentOption.price)} pelo Pix`
-      : `Pague a entrada de ${formatCurrency(
-          paymentOption.price / installments
-        )} pelo Pix`;
+      ? `Pague o valor único de ${formatCurrency(price)} pelo Pix`
+      : `Pague a entrada de ${formatCurrency(price / installments)} pelo Pix`;
 
   if (paymentOption) {
     return (
       <main>
         <Container title={titleMessage}>
-          <PixPaymentSection installments={installments} />
+          <PixPaymentSection paymentId={"123"} />
           <InstallmentList
             phase={1}
             installments={installments}
-            price={paymentOption.price}
+            price={price}
           />
           <PaymentValidDate />
-          <PaymentFaq price={paymentOption.price} />
+          <PaymentFaq price={price} />
         </Container>
-        <Identifier id="2c1b951f356c4680b13ba1c9fc889c47" />
+        <Identifier id="123" />
       </main>
     );
   }

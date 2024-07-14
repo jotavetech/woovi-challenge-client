@@ -1,6 +1,7 @@
 "use client";
 
 import { InstallmentListItem } from "../installment-list-item/installment-list-item";
+
 import { InstallmentListWrapper } from "./installment-list.styled";
 
 interface InstallmentListProps {
@@ -16,19 +17,20 @@ export function InstallmentList({
 }: InstallmentListProps) {
   const installmentPrice = price / installments;
 
-  const installmentsArray = Array.from(
+  // Used to map all the possibilities dinamically
+  const installmentsLength = Array.from(
     { length: installments },
-    (_, index) => index
+    (_, i) => i + 1
   );
 
   return (
     <InstallmentListWrapper>
-      {installmentsArray.map((installment) => (
+      {installmentsLength.map((installment) => (
         <InstallmentListItem
           key={installment}
-          installment={installment + 1}
-          active={installment + 1 === phase}
-          paid={installment + 1 < phase}
+          installment={installment}
+          active={installment === phase}
+          paid={installment < phase}
           price={installmentPrice}
         />
       ))}
