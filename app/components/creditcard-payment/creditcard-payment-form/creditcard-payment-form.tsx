@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 import { InputField } from "../..";
 
@@ -41,6 +42,7 @@ export function CreditCardPaymentForm({
   installments,
   price,
 }: CreditCardPaymentFormProps) {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const { handleSubmit, register, formState } = useForm({
@@ -48,7 +50,13 @@ export function CreditCardPaymentForm({
   });
 
   const onSubmit = () => {
-    router.push("/confirmation");
+    setLoading(true);
+
+    // Simulate a payment confirmation
+    setTimeout(() => {
+      setLoading(false);
+      router.push("/confirmation");
+    }, 2000);
   };
 
   return (
@@ -89,7 +97,9 @@ export function CreditCardPaymentForm({
           register={register}
         />
         <Grid item xs={12}>
-          <SubmitButton type="submit">Pagar</SubmitButton>
+          <SubmitButton type="submit" disabled={loading}>
+            {loading ? "Confirmando..." : "Pagar"}
+          </SubmitButton>
         </Grid>
       </Grid>
     </CreditCardPaymentFormWrapper>

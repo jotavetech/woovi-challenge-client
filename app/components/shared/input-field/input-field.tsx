@@ -4,8 +4,6 @@ import { Grid, TextField } from "@mui/material";
 
 import { FieldValues, FormState, UseFormRegister } from "react-hook-form";
 
-import { InputFieldErrorMessage } from "./input-field.styled";
-
 interface InputFieldProps {
   register: UseFormRegister<FieldValues>;
   formState: FormState<FieldValues>;
@@ -34,6 +32,13 @@ export function InputField({
         {...register(name)}
         helperText={error}
         error={hasError}
+        sx={{
+          "& *": {
+            borderRadius: "8px",
+            fontWeight: 500,
+            color: "#4D4D4D",
+          },
+        }}
       />
     </Grid>
   );
