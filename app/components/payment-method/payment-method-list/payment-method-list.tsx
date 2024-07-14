@@ -36,7 +36,7 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
 
   return (
     <PaymentMethodListWrapper>
-      <ul role="listbox">
+      <ul role="listbox" aria-label="Veja todas as opções de pagamento">
         {paymentOptions.map((paymentOption, i) => (
           <PaymentMethodOption
             key={i}
@@ -52,7 +52,9 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
       {selectedInstallmentsOption && (
         <PaymentMethodButtonWrapper>
           <Link href={`/pix-payment/${selectedInstallmentsOption}`}>
-            <PaymentMethodButton>
+            <PaymentMethodButton
+              aria-label={`Continuar para o pagamento em ${selectedInstallmentsOption} vezes`}
+            >
               Continuar em {selectedInstallmentsOption}x <ArrowRight />
             </PaymentMethodButton>
           </Link>

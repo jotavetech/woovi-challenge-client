@@ -53,6 +53,7 @@ export function PaymentMethodOption({
       tabIndex={0}
       onKeyDown={handleKeyDown}
       aria-selected={isActivated}
+      aria-label={`Pressione Enter para selecionar essa opção de pagamento em ${installments} vezes de ${installmentPrice}`}
     >
       {oneInstallment && <Label>Pix</Label>}
       {twoInstallments && <Label>Pix Parcelado</Label>}
