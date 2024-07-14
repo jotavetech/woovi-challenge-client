@@ -6,7 +6,6 @@ import {
   PixPaymentCopybutton,
   PixPaymentQrcodeWrapper,
   PixPaymentSectionWrapper,
-  PixPaymentValideDate,
 } from "./pix-payment-section.styled";
 
 import { Copy } from "lucide-react";
@@ -49,10 +48,6 @@ export function PixPaymentSection({ installments }: PixPaymentSectionProps) {
         {copyButtonMessage}
         <Copy />
       </PixPaymentCopybutton>
-      <PixPaymentValideDate>
-        <span>Prazo de pagamento:</span>
-        <p>15/07/2024 - 08:17</p>
-      </PixPaymentValideDate>
     </PixPaymentSectionWrapper>
   );
 }

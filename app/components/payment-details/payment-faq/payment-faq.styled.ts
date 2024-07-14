@@ -10,7 +10,7 @@ export const PaymentFaqDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding: 20px 0;
 `;
 
 export const PaymentFaqCET = styled.p`

@@ -12,6 +12,7 @@ import {
   Identifier,
   InstallmentList,
   PaymentFaq,
+  PaymentValidDate,
 } from "@/app/components";
 
 interface CreditCardPaymentPageProps {
@@ -49,6 +50,7 @@ export default function CreditCardPaymentPage({
           installments={installments}
           price={paymentOption.price}
         />
+        <PaymentValidDate />
         <InstallmentList
           phase={2}
           installments={installments}

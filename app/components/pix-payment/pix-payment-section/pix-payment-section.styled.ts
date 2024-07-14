@@ -41,18 +41,3 @@ export const PixPaymentCopybutton = styled.button`
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
   }
 `;
-
-export const PixPaymentValideDate = styled.div`
-  font-size: ${(props) => props.theme.fontSizes.md};
-  text-align: center;
-
-  span {
-    color: ${(props) => props.theme.colors.secondary};
-    font-weight: 600;
-  }
-
-  p {
-    color: ${(props) => props.theme.colors.primary};
-    font-weight: 800;
-  }
-`;

@@ -1,7 +1,12 @@
 "use client";
 
-import { TextField } from "@mui/material";
-import { CreditCardPaymentFormWrapper } from "./creditcard-payment-form.styled";
+import { Grid, MenuItem, TextField } from "@mui/material";
+
+import {
+  CreditCardPaymentFormWrapper,
+  SubmitButton,
+} from "./creditcard-payment-form.styled";
+import formatCurrency from "@/app/utils/formatCurrency";
 
 interface CreditCardPaymentFormProps {
   installments: number;
@@ -14,11 +19,39 @@ export function CreditCardPaymentForm({
 }: CreditCardPaymentFormProps) {
   return (
     <CreditCardPaymentFormWrapper>
-      <TextField variant="outlined" label="Nome completo" />
-      <TextField variant="outlined" label="CPF" />
-      <TextField variant="outlined" label="Número do cartão" />
-      <TextField variant="outlined" label="Vencimento" />
-      <TextField variant="outlined" label="CVV" />
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <TextField variant="outlined" label="Nome completo" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField variant="outlined" label="CPF" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField variant="outlined" label="Número do cartão" fullWidth />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField variant="outlined" label="Vencimento" fullWidth />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField variant="outlined" label="CVV" fullWidth />
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
+            variant="outlined"
+            label="Parcelas"
+            value={installments - 1}
+            select
+            fullWidth
+          >
+            <MenuItem value={installments - 1}>
+              {installments - 1}x de {formatCurrency(price / installments)}
+            </MenuItem>
+          </TextField>
+        </Grid>
+        <Grid item xs={12}>
+          <SubmitButton type="submit">Pagar</SubmitButton>
+        </Grid>
+      </Grid>
     </CreditCardPaymentFormWrapper>
   );
 }

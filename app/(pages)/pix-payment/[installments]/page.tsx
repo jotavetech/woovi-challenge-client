@@ -6,6 +6,7 @@ import {
   InstallmentList,
   PaymentFaq,
   Identifier,
+  PaymentValidDate,
 } from "@/app/components";
 
 import paymentOptions from "@/app/data/payment-options.json";
@@ -52,6 +53,8 @@ export default function PixPayment({ params }: PixPaymentProps) {
             installments={installments}
             price={paymentOption.price}
           />
+          <PaymentValidDate />
+
           <PaymentFaq price={paymentOption.price} />
         </Container>
         <Identifier id="2c1b951f356c4680b13ba1c9fc889c47" />
