@@ -36,7 +36,7 @@ export function PaymentMethodList({ paymentOptions }: PaymentMethodListProps) {
 
   return (
     <PaymentMethodListWrapper>
-      <ul>
+      <ul role="listbox">
         {paymentOptions.map((paymentOption, i) => (
           <PaymentMethodOption
             key={i}

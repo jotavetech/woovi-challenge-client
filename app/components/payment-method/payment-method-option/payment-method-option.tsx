@@ -17,6 +17,8 @@ import {
 
 import Image from "next/image";
 
+import { KeyboardEvent } from "react";
+
 interface PaymentMethodOptionProps {
   paymentOption: PaymentOptionType;
   isActivated?: boolean;
@@ -37,8 +39,21 @@ export function PaymentMethodOption({
   const twoInstallments = installments === 2;
   const bestInstallmentOption = installments === 4;
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLLIElement>) => {
+    if (e.key === "Enter") {
+      onSelect();
+    }
+  };
+
   return (
-    <PaymentMethodOptionWrapper $isActivated={isActivated} onClick={onSelect}>
+    <PaymentMethodOptionWrapper
+      $isActivated={isActivated}
+      onClick={onSelect}
+      role="option"
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+      aria-selected={isActivated}
+    >
       {oneInstallment && <Label>Pix</Label>}
       {twoInstallments && <Label>Pix Parcelado</Label>}
 
