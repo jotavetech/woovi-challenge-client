@@ -7,7 +7,7 @@ export { Accordion } from "./utils/accordion/accordion";
 export { Identifier } from "./utils/identifier/identifier";
 export { InputField } from "./utils/input-field/input-field";
 export { PaymentValidDate } from "./utils/payment-valid-date/payment-valid-date";
-export { AnimatedConfirmation } from "./utils/animated-confirmation/animated-confirmation";
+export { Status } from "./utils/status/status";
 
 export { PaymentMethodList } from "./payment-method/payment-method-list/payment-method-list";
 export { PaymentMethodOption } from "./payment-method/payment-method-option/payment-method-option";

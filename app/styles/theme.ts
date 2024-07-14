@@ -12,6 +12,8 @@ const theme = {
     "button-disabled": "#E5E5E5",
     selected: "#F4FBF9",
     checked: "#03D69D",
+    success: "#03D69D",
+    error: "#FF0000",
     label: "#E5E5E5",
   },
   borderColor: {
