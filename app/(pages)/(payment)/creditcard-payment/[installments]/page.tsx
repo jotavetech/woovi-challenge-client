@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import {
   Container,
   CreditCardPaymentForm,
-  Identifier,
   InstallmentList,
   PaymentFaq,
   PaymentValidDate,
@@ -42,14 +41,11 @@ export default function CreditCardPaymentPage({
   }x no cartão`;
 
   return (
-    <main>
-      <Container title={titleMessage}>
-        <CreditCardPaymentForm installments={installments} price={price} />
-        <PaymentValidDate />
-        <InstallmentList phase={2} installments={installments} price={price} />
-        <PaymentFaq price={price} />
-      </Container>
-      <Identifier id="123" />
-    </main>
+    <Container title={titleMessage}>
+      <CreditCardPaymentForm installments={installments} price={price} />
+      <PaymentValidDate />
+      <InstallmentList phase={2} installments={installments} price={price} />
+      <PaymentFaq price={price} />
+    </Container>
   );
 }

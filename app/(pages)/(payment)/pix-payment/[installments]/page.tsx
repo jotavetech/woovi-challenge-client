@@ -5,7 +5,6 @@ import {
   PixPaymentSection,
   InstallmentList,
   PaymentFaq,
-  Identifier,
   PaymentValidDate,
 } from "@/app/components";
 
@@ -39,19 +38,12 @@ export default function PixPayment({ params }: PixPaymentProps) {
 
   if (paymentOption) {
     return (
-      <main>
-        <Container title={titleMessage}>
-          <PixPaymentSection paymentId={"123"} />
-          <InstallmentList
-            phase={1}
-            installments={installments}
-            price={price}
-          />
-          <PaymentValidDate />
-          <PaymentFaq price={price} />
-        </Container>
-        <Identifier id="123" />
-      </main>
+      <Container title={titleMessage}>
+        <PixPaymentSection paymentId={"123"} />
+        <InstallmentList phase={1} installments={installments} price={price} />
+        <PaymentValidDate />
+        <PaymentFaq price={price} />
+      </Container>
     );
   }
 }
