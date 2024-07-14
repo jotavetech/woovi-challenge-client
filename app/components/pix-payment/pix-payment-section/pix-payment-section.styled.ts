@@ -25,7 +25,7 @@ export const PixPaymentCopybutton = styled.button`
   border: none;
   border-radius: 8px;
   font-size: ${(props) => props.theme.fontSizes.lg};
-  font-weight: 600;
+  font-weight: 500;
   background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
   color: white;
   display: flex;
@@ -33,11 +33,12 @@ export const PixPaymentCopybutton = styled.button`
   justify-content: center;
   gap: 5px;
 
-  &:hover {
+  &:active {
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
   }
 
   &:disabled {
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
+    cursor: default;
   }
 `;

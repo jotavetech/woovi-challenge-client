@@ -15,7 +15,9 @@ import { useState } from "react";
 
 import { InputField } from "../..";
 
-import paymentFormSchema from "@/app/validators/schemas/payment-form-schema";
+import paymentFormSchema from "@/app/helpers/schemas/payment-form-schema";
+
+import { useMask } from "@react-input/mask";
 
 interface CreditCardPaymentFormProps {
   installments: number;
@@ -28,6 +30,27 @@ export function CreditCardPaymentForm({
 }: CreditCardPaymentFormProps) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+
+  const cpfMask = useMask({
+    mask: "999.999.999-99",
+    replacement: {
+      "9": /[0-9]/,
+    },
+  });
+
+  const ccNumberMask = useMask({
+    mask: "9999 9999 9999 9999",
+    replacement: {
+      "9": /[0-9]/,
+    },
+  });
+
+  const expirationDateMask = useMask({
+    mask: "99/99",
+    replacement: {
+      "9": /[0-9]/,
+    },
+  });
 
   const { handleSubmit, register, formState } = useForm({
     resolver: zodResolver(paymentFormSchema),

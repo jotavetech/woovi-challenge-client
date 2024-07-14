@@ -19,4 +19,10 @@ export const SubmitButton = styled.button`
   &:hover {
     background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
   }
+
+  &:disabled {
+    background-color: ${(props) =>
+      props.theme.backgroundColor["button-disabled"]};
+    cursor: wait;
+  }
 `;
