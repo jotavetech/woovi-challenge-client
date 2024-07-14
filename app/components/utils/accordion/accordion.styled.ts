@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AccordionWrapper = styled.div`
   width: 100%;
-  border-color: ${(props) => props.theme.borderColor.primary};
+  border-color: ${(props) => props.theme.borderColors.primary};
   border-style: solid;
   border-width: 2px 0;
 `;

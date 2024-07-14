@@ -7,7 +7,8 @@ export const CreditCardPaymentFormWrapper = styled.form`
 export const SubmitButton = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
+  background-color: ${(props) =>
+    props.theme.backgroundColors["button-primary"]};
   font-size: ${(props) => props.theme.fontSizes.lg};
   color: white;
   font-weight: 500;
@@ -17,12 +18,13 @@ export const SubmitButton = styled.button`
   transition: all 0.3s;
 
   &:hover {
-    background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
+    background-color: ${(props) =>
+      props.theme.backgroundColors["button-hover"]};
   }
 
   &:disabled {
     background-color: ${(props) =>
-      props.theme.backgroundColor["button-disabled"]};
+      props.theme.backgroundColors["button-disabled"]};
     cursor: wait;
   }
 `;

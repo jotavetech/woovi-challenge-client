@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const PaymentFaqWrapper = styled.div`
   margin-top: 2rem;
   width: 100%;
-  border-top: 2px solid ${(props) => props.theme.borderColor.primary};
+  border-top: 2px solid ${(props) => props.theme.borderColors.primary};
 `;
 
 export const PaymentFaqDetails = styled.div`

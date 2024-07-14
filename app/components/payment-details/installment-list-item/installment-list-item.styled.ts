@@ -17,7 +17,7 @@ export const InstallmentListItemWrapper = styled.li`
     bottom: -20px;
     width: 4px;
     height: 100%;
-    background-color: ${(props) => props.theme.borderColor.primary};
+    background-color: ${(props) => props.theme.borderColors.primary};
   }
 
   &:last-child::before {
@@ -41,10 +41,10 @@ export const InstallmentCheckmark = styled.div<InstallmentCheckmarkProps>`
   border: 2px solid
     ${(props) =>
       props.$isActive || props.$isPaid
-        ? props.theme.borderColor.thirdiary
-        : props.theme.borderColor.primary};
+        ? props.theme.borderColors.thirdiary
+        : props.theme.borderColors.primary};
   background-color: ${(props) =>
-    props.$isPaid && props.theme.backgroundColor.checked};
+    props.$isPaid && props.theme.backgroundColors.checked};
 
   display: flex;
   justify-content: center;

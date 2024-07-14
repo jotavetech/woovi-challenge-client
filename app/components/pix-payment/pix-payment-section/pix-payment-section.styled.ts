@@ -14,7 +14,7 @@ export const PixPaymentQrcodeWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid ${(props) => props.theme.borderColor.thirdiary};
+  border: 2px solid ${(props) => props.theme.borderColors.thirdiary};
   border-radius: 10px;
 `;
 
@@ -26,7 +26,8 @@ export const PixPaymentCopybutton = styled.button`
   border-radius: 8px;
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 500;
-  background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
+  background-color: ${(props) =>
+    props.theme.backgroundColors["button-primary"]};
   color: white;
   display: flex;
   align-items: center;
@@ -34,11 +35,13 @@ export const PixPaymentCopybutton = styled.button`
   gap: 5px;
 
   &:active {
-    background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
+    background-color: ${(props) =>
+      props.theme.backgroundColors["button-hover"]};
   }
 
   &:disabled {
-    background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
+    background-color: ${(props) =>
+      props.theme.backgroundColors["button-hover"]};
     cursor: default;
   }
 `;

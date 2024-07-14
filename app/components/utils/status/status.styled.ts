@@ -20,8 +20,8 @@ export const StatusIcon = styled.div<StatusIconProps>`
   border-radius: 50%;
   background-color: ${(props) =>
     props.$type === "success"
-      ? props.theme.backgroundColor.success
-      : props.theme.backgroundColor.error};
+      ? props.theme.backgroundColors.success
+      : props.theme.backgroundColors.error};
   display: flex;
   justify-content: center;
   align-items: center;

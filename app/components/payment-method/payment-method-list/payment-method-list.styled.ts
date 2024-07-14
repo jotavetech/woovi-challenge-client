@@ -25,7 +25,8 @@ export const PaymentMethodButton = styled.button`
   border-radius: 8px;
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 600;
-  background-color: ${(props) => props.theme.backgroundColor["button-primary"]};
+  background-color: ${(props) =>
+    props.theme.backgroundColors["button-primary"]};
   color: white;
   animation: pull-button 0.5s ease-in-out forwards;
   display: flex;
@@ -34,7 +35,8 @@ export const PaymentMethodButton = styled.button`
   gap: 5px;
 
   &:hover {
-    background-color: ${(props) => props.theme.backgroundColor["button-hover"]};
+    background-color: ${(props) =>
+      props.theme.backgroundColors["button-hover"]};
   }
 
   @keyframes pull-button {

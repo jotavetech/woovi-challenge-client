@@ -5,7 +5,7 @@ const theme = {
     thirdiary: "#03D69D",
     error: "#FF0000",
   },
-  backgroundColor: {
+  backgroundColors: {
     tag: "#133A6F",
     "button-primary": "#133A6F",
     "button-hover": "#0F2A4B",
@@ -16,7 +16,7 @@ const theme = {
     error: "#FF0000",
     label: "#E5E5E5",
   },
-  borderColor: {
+  borderColors: {
     primary: "#E5E5E5",
     thirdiary: "#03D69D",
   },

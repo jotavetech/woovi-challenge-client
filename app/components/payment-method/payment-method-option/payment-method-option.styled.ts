@@ -15,11 +15,11 @@ export const PaymentMethodOptionWrapper = styled.li<StyledPaymentMethodOptionPro
 
   border-color: ${(props) =>
     props.$isActivated
-      ? props.theme.backgroundColor.checked
-      : props.theme.borderColor.primary};
+      ? props.theme.backgroundColors.checked
+      : props.theme.borderColors.primary};
 
   background-color: ${(props) =>
-    props.$isActivated && props.theme.backgroundColor.selected};
+    props.$isActivated && props.theme.backgroundColors.selected};
 
   &:first-child {
     margin-bottom: 34px;
@@ -62,7 +62,7 @@ export const OptionDetails = styled.div`
 export const Label = styled.p`
   top: -14px;
   position: absolute;
-  background-color: ${(props) => props.theme.backgroundColor.label};
+  background-color: ${(props) => props.theme.backgroundColors.label};
   font-size: ${(props) => props.theme.fontSizes.lg};
   font-weight: 800;
   padding: 2px 20px;

@@ -11,12 +11,12 @@ export const PaymentMethodCheckmarkWrapper = styled.div<PaymentMethodCheckmarkWr
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid ${(props) => props.theme.borderColor.primary};
+  border: 2px solid ${(props) => props.theme.borderColors.primary};
 
   ${(props) =>
     props.$isActivated &&
     `
-    background-color: ${props.theme.backgroundColor.checked};
-    border-color: ${props.theme.backgroundColor.checked};
+    background-color: ${props.theme.backgroundColors.checked};
+    border-color: ${props.theme.backgroundColors.checked};
   `}
 `;
