@@ -11,6 +11,7 @@ import * as z from "zod";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 import { InputField } from "../..";
@@ -24,17 +25,15 @@ const paymentFormSchema = z.object({
   cardHolder: z
     .string()
     .min(3, { message: "O nome precisa conter mais de 3 caracteres." }),
-  cpf: z
-    .string()
-    .length(11, { message: "O CPF precisa conter 11 caracteres." }),
+  cpf: z.string().length(11, { message: "O CPF é inválido." }),
   cardNumber: z.string().length(16, {
-    message: "O número do cartão precisa conter 16 caracteres.",
+    message: "Número inválido.",
   }),
   expirationDate: z.string().length(6, {
-    message: "A data de vencimento precisa conter 6 caracteres.",
+    message: "Data de vencimento inválida.",
   }),
   cvv: z.string().length(3, {
-    message: "O CVV precisa conter 3 caracteres.",
+    message: "O CVV precisa conter 3 caracteres numerais.",
   }),
 });
 
@@ -42,12 +41,14 @@ export function CreditCardPaymentForm({
   installments,
   price,
 }: CreditCardPaymentFormProps) {
+  const router = useRouter();
+
   const { handleSubmit, register, formState } = useForm({
     resolver: zodResolver(paymentFormSchema),
   });
 
-  const onSubmit = (data: any) => {
-    // todo
+  const onSubmit = () => {
+    router.push("/confirmation");
   };
 
   return (
