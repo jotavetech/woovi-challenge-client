@@ -23,13 +23,18 @@ export function InputField({
 }: InputFieldProps) {
   const { errors } = formState;
 
-  const hasError = errors && errors[name];
+  const hasError = !!(errors && errors[name]);
   const error = hasError ? String(errors[name]!.message) : "";
 
   return (
     <Grid item xs={gridExtends === "full" ? 12 : 6}>
-      <TextField fullWidth label={label} {...register(name)} />
-      {error && <InputFieldErrorMessage>{error}</InputFieldErrorMessage>}
+      <TextField
+        fullWidth
+        label={label}
+        {...register(name)}
+        helperText={error}
+        error={hasError}
+      />
     </Grid>
   );
 }
