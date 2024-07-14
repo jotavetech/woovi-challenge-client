@@ -26,7 +26,7 @@ export function PaymentFaq({ price }: PaymentFaqProps) {
       </PaymentFaqDetails>
       <Accordion
         title="Como funciona?"
-        description="Descrição do funcionamento"
+        description="Você tem duas opções: Pagar o valor total em 1x no pix, ou pagar a entrada no pix e o restante com o cartão de cŕedito. É só escolher a melhor opção para você que cuidamos do resto."
       />
     </PaymentFaqWrapper>
   );
