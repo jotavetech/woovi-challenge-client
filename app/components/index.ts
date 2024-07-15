@@ -3,18 +3,18 @@ export { Header } from "./layout/header/header";
 export { Container } from "./layout/container/container";
 
 export { Title } from "./utils/title/title";
+export { Status } from "./utils/status/status";
 export { Accordion } from "./utils/accordion/accordion";
 export { Identifier } from "./utils/identifier/identifier";
 export { InputField } from "./utils/input-field/input-field";
+export { PaymentFaq } from "./utils/payment-faq/payment-faq";
 export { PaymentValidDate } from "./utils/payment-valid-date/payment-valid-date";
-export { Status } from "./utils/status/status";
 
-export { PaymentMethodList } from "./payment-method/payment-method-list/payment-method-list";
-export { PaymentMethodOption } from "./payment-method/payment-method-option/payment-method-option";
+export { MethodList } from "./payment/options/method-list/method-list";
+export { MethodOption } from "./payment/options/method-option/method-option";
 
-export { PixPaymentSection } from "./pix-payment/pix-payment-section/pix-payment-section";
+export { PixPayment } from "./payment/pix/pix-payment/pix-payment";
 
-export { InstallmentList } from "./payment-details/installment-list/installment-list";
-export { PaymentFaq } from "./payment-details/payment-faq/payment-faq";
+export { InstallmentPhases } from "./payment/details/installment-phases/installment-phases";
 
-export { CreditCardPaymentForm } from "./creditcard-payment/creditcard-payment-form/creditcard-payment-form";
+export { CreditCardForm } from "./payment/creditcard/creditcard-form/creditcard-form";
