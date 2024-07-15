@@ -18,3 +18,6 @@ export { PixPayment } from "./payment/pix/pix-payment/pix-payment";
 export { InstallmentPhases } from "./payment/details/installment-phases/installment-phases";
 
 export { CreditCardForm } from "./payment/creditcard/creditcard-form/creditcard-form";
+
+export { Slide } from "./transitions/slide";
+export { Fade } from "./transitions/fade";

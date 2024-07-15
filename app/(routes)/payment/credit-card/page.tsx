@@ -1,11 +1,12 @@
 "use client";
 
 import {
-  Container,
-  CreditCardForm,
   InstallmentPhases,
-  PaymentFaq,
   PaymentValidDate,
+  CreditCardForm,
+  Container,
+  PaymentFaq,
+  Slide,
 } from "@/app/components";
 
 import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
@@ -20,11 +21,17 @@ export default function CreditCardPaymentPage() {
   }x no cartão`;
 
   return (
-    <Container title={titleMessage}>
-      <CreditCardForm installments={installments} price={price} />
-      <PaymentValidDate />
-      <InstallmentPhases phase={2} installments={installments} price={price} />
-      <PaymentFaq />
-    </Container>
+    <Slide direction="right" timeout={500}>
+      <Container title={titleMessage}>
+        <CreditCardForm installments={installments} price={price} />
+        <PaymentValidDate />
+        <InstallmentPhases
+          phase={2}
+          installments={installments}
+          price={price}
+        />
+        <PaymentFaq />
+      </Container>
+    </Slide>
   );
 }

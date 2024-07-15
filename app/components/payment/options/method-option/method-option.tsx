@@ -7,10 +7,10 @@ import { PaymentOptionType } from "@/app/types";
 import { MethodCheckmark } from "../method-checkmark/method-checkmark";
 
 import {
-  MethodOptionWrapper,
   MethodOptionSpecialDescription,
-  MethodOptionDetails,
   MethodOptionDescription,
+  MethodOptionWrapper,
+  MethodOptionDetails,
   MethodOptionLabel,
   MethodOptionTag,
 } from "./method-option.styled";
@@ -18,10 +18,12 @@ import {
 import Image from "next/image";
 
 import { KeyboardEvent } from "react";
-import { Fade } from "@mui/material";
+
+import { Fade } from "@/app/components";
 
 interface PaymentMethodOptionProps {
   paymentOption: PaymentOptionType;
+  transitionTimeout?: number;
   isActivated?: boolean;
   onSelect: () => void;
 }
@@ -30,6 +32,7 @@ export function MethodOption({
   paymentOption,
   isActivated,
   onSelect,
+  transitionTimeout,
 }: PaymentMethodOptionProps) {
   const { price, installments } = paymentOption;
 
@@ -47,7 +50,7 @@ export function MethodOption({
   };
 
   return (
-    <Fade in={true} timeout={1000}>
+    <Fade timeout={transitionTimeout ?? 1000}>
       <MethodOptionWrapper
         $isActivated={isActivated}
         role="option"

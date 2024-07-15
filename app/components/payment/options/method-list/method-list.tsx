@@ -3,24 +3,23 @@
 import { PaymentOptionsType } from "@/app/types";
 
 import {
-  MethodButtonWrapper,
-  MethodsWrapper,
   MethodButton,
+  MethodButtonWrapper,
   MethodsList,
+  MethodsWrapper,
 } from "./method-list.styled";
 
 import { MethodOption } from "../method-option/method-option";
 
-import { useState } from "react";
-
 import { ArrowRight } from "lucide-react";
-
-import { useRouter } from "next/navigation";
 
 import uniqid from "uniqid";
 
-import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+
 import { usePaymentIdStore } from "@/app/stores/usePaymentIdStore";
+import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
 
 import findPaymentOption from "@/app/utils/find-payment-option";
 
@@ -73,6 +72,7 @@ export function MethodList({ paymentOptions }: PaymentMethodListProps) {
         {paymentOptions.map((paymentOption, i) => (
           <MethodOption
             key={i}
+            transitionTimeout={i * 600}
             paymentOption={paymentOption}
             isActivated={
               selectedInstallmentsOption === paymentOption.installments
