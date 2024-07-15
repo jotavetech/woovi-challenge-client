@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface StyledMethodOptionProps {
+interface MethodOptionProps {
   $isActivated?: boolean;
 }
 
-export const MethodOptionWrapper = styled.li<StyledMethodOptionProps>`
+export const MethodOptionWrapper = styled.li<MethodOptionProps>`
   cursor: pointer;
   position: relative;
   transition: all 0.2s;
@@ -80,21 +80,37 @@ export const MethodOptionDescription = styled.p`
   color: ${(props) => props.theme.colors.secondary};
 `;
 
-export const MethodOptionTag = styled.div`
+interface MethodOptionTagProps {
+  $isActivated?: boolean;
+}
+
+export const MethodOptionTag = styled.div<MethodOptionTagProps>`
   margin-top: 11px;
   position: relative;
+  width: 100%;
+  height: 33px;
+  background-color: ${(props) => props.theme.backgroundColors.tag};
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0 10px;
 
-  p {
+  &::before {
+    content: "";
     position: absolute;
-    color: white;
-    bottom: 12px;
-    left: 10px;
-    font-size: ${(props) => props.theme.fontSizes.sm};
+    width: 33px;
+    height: 33px;
+    background-color: ${(props) =>
+      props.$isActivated ? props.theme.backgroundColors.selected : "white;"};
+    border-radius: 5px;
+    right: -25px;
+    transform: rotate(45deg);
   }
 
-  img {
-    left: 0;
-    width: 100%;
-    height: 100%;
+  p {
+    color: white;
+    font-size: ${(props) => props.theme.fontSizes.sm};
   }
 `;

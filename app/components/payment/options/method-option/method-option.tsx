@@ -15,8 +15,6 @@ import {
   MethodOptionTag,
 } from "./method-option.styled";
 
-import Image from "next/image";
-
 import { KeyboardEvent } from "react";
 
 import { Fade } from "@/app/components";
@@ -84,7 +82,7 @@ export function MethodOption({
         )}
 
         {(oneInstallment || bestInstallmentOption) && (
-          <MethodOptionTag>
+          <MethodOptionTag $isActivated={isActivated}>
             {oneInstallment ? (
               <p>
                 <b>🤑 R$ 300,00</b> de volta no seu Pix na hora
@@ -94,7 +92,6 @@ export function MethodOption({
                 <b>-3% de juros:</b> Melhor opção de parcelamento
               </p>
             )}
-            <Image src="./tag.svg" alt="Tag" width={10} height={10} />
           </MethodOptionTag>
         )}
       </MethodOptionWrapper>
