@@ -48,9 +48,9 @@ export function PaymentMethodOption({
   return (
     <PaymentMethodOptionWrapper
       $isActivated={isActivated}
-      onClick={onSelect}
       role="option"
       tabIndex={0}
+      onClick={onSelect}
       onKeyDown={handleKeyDown}
       aria-selected={isActivated}
       aria-label={`Pressione Enter para selecionar essa opção de pagamento em ${installments} vezes de ${installmentPrice}`}

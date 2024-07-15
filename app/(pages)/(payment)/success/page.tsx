@@ -1,6 +1,6 @@
 import { Status, Container } from "@/app/components";
 
-export default function ConfirmationPage() {
+export default function SuccessPage() {
   return (
     <main>
       <Container title="Obrigado João, seu pagamento foi confirmado!">

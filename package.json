@@ -19,12 +19,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
-    "react-input-mask": "^2.0.4",
     "react-qr-code": "^2.0.15",
     "socket.io-client": "^4.7.5",
     "styled-components": "^6.1.11",
     "uniqid": "^5.4.0",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20",

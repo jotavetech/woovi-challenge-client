@@ -1,20 +1,20 @@
 "use client";
 
+import { usePaymentIdStore } from "@/app/stores/usePaymentIdStore";
+
 import {
   IdentifierID,
   IdentifierTitle,
   IdentifierWrapper,
 } from "./identifier.styled";
 
-interface IdentifierProps {
-  id: string;
-}
+export function Identifier() {
+  const paymentId = usePaymentIdStore((state) => state.id);
 
-export function Identifier({ id }: IdentifierProps) {
   return (
     <IdentifierWrapper>
       <IdentifierTitle>Identificador:</IdentifierTitle>
-      <IdentifierID>{id}</IdentifierID>
+      <IdentifierID>{paymentId}</IdentifierID>
     </IdentifierWrapper>
   );
 }

@@ -8,28 +8,14 @@ import {
   PaymentValidDate,
 } from "@/app/components";
 
-import findPaymentOption from "@/app/utils/find-payment-option";
+import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
+
 import formatCurrency from "@/app/utils/formatCurrency";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+export default function PixPayment() {
+  const paymentOption = usePaymentOptionStore((state) => state.option);
 
-interface PixPaymentProps {
-  params: { installments: string };
-}
-
-export default function PixPayment({ params }: PixPaymentProps) {
-  const router = useRouter();
-
-  const paymentOption = findPaymentOption(params.installments);
-
-  useEffect(() => {
-    if (!paymentOption) return router.push("/");
-  }, [router, paymentOption]);
-
-  if (!paymentOption) return null;
-
-  const { installments, price } = paymentOption;
+  const { installments, price } = paymentOption!;
 
   const titleMessage =
     installments === 1

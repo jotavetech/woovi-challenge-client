@@ -11,12 +11,14 @@ import {
 import { Copy } from "lucide-react";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface PixPaymentSectionProps {
   paymentId: string;
 }
 
 export function PixPaymentSection({ paymentId }: PixPaymentSectionProps) {
+  const router = useRouter();
   const [copyButtonDisabled, setCopyButtonDisabled] = useState(false);
   const [copyButtonMessage, setCopyButtonMessage] = useState(
     "Clique para copiar o QR CODE"
@@ -32,8 +34,10 @@ export function PixPaymentSection({ paymentId }: PixPaymentSectionProps) {
 
     setTimeout(() => {
       setCopyButtonMessage("Clique para copiar o QR CODE");
+      // simulate payment
+      router.push("/creditcard-payment");
       setCopyButtonDisabled(false);
-    }, 3000);
+    }, 1000);
   };
 
   return (

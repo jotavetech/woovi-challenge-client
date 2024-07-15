@@ -39,7 +39,7 @@ export function CreditCardPaymentForm({
     // Simulate a payment confirmation
     setTimeout(() => {
       setLoading(false);
-      router.push("/confirmation");
+      router.push("/sucess");
     }, 2000);
   };
 

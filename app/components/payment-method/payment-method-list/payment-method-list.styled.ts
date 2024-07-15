@@ -6,6 +6,8 @@ export const PaymentMethodListWrapper = styled.div`
   position: relative;
 `;
 
+export const PaymentMethodUlList = styled.ul``;
+
 export const PaymentMethodButtonWrapper = styled.div`
   position: fixed;
   bottom: 20px;
