@@ -13,15 +13,17 @@ import { Copy } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { usePaymentIdStore } from "@/app/stores/usePaymentIdStore";
 import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
 
-interface PixPaymentProps {
-  paymentId: string;
-}
+import ioClient from "@/app/sockets/io-client";
 
-export function PixPayment({ paymentId }: PixPaymentProps) {
+const WEBSOCKET_URL = process.env.NEXT_PUBLIC_WEBSOCKET_URL as string;
+
+export function PixPayment() {
   const router = useRouter();
 
+  const paymentId = usePaymentIdStore((state) => state.id);
   const paymentOption = usePaymentOptionStore((state) => state.option);
 
   const [copyButtonDisabled, setCopyButtonDisabled] = useState(false);
@@ -29,7 +31,7 @@ export function PixPayment({ paymentId }: PixPaymentProps) {
     "Clique para copiar o QR CODE"
   );
 
-  const paymentPixUrl = `https://woovi-server.vercel.app/pay/${paymentId}`;
+  const paymentPixUrl = `${WEBSOCKET_URL}/payment/${paymentId}`;
 
   const copyPixUrl = (url: string) => {
     navigator.clipboard.writeText(url);
@@ -39,12 +41,16 @@ export function PixPayment({ paymentId }: PixPaymentProps) {
 
     setTimeout(() => {
       setCopyButtonMessage("Clique para copiar o QR CODE");
-      // simulate payment
-      if (paymentOption?.installments === 1) router.push("/payment/success");
-      else router.push("/payment/credit-card");
       setCopyButtonDisabled(false);
     }, 1000);
   };
+
+  ioClient.on("payment-success", (receivedPaymentId) => {
+    if (receivedPaymentId === paymentId) {
+      if (paymentOption?.installments === 1) router.push("/payment/success");
+      else router.push("/payment/credit-card");
+    }
+  });
 
   return (
     <PixPaymentWrapper>

@@ -27,7 +27,7 @@ export default function PixPayment() {
     return (
       <Slide direction="left" timeout={500}>
         <Container title={titleMessage}>
-          <PixPaymentSection paymentId="123" />
+          <PixPaymentSection />
           <DueDate />
           <InstallmentPhases
             phase={1}
