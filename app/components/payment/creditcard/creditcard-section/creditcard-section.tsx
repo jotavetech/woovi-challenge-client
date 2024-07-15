@@ -24,11 +24,9 @@ export function CreditCardSection() {
     resolver: zodResolver(paymentFormSchema),
   });
 
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const onSubmit = () => {
     setLoading(true);
 
-    // Simulate a payment confirmation
     setTimeout(() => {
       setLoading(false);
       router.push("/payment/success");
@@ -36,7 +34,7 @@ export function CreditCardSection() {
   };
   return (
     <CreditCardForm
-      onSubmit={onSubmit}
+      onSubmit={handleSubmit(onSubmit)}
       loading={loading}
       register={register}
       formState={formState}

@@ -17,3 +17,5 @@ function validateExpirationDate(expirationDate: string): boolean {
 
   return true;
 }
+
+export default validateExpirationDate;
