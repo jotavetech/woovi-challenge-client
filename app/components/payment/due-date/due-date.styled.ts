@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PaymentValidDateWrapper = styled.div`
+export const DueDateWrapper = styled.div`
   font-size: ${(props) => props.theme.fontSizes.md};
   text-align: center;
   margin: 20px 0;

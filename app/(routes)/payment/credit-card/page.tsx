@@ -2,11 +2,11 @@
 
 import {
   InstallmentPhases,
-  PaymentValidDate,
+  DueDate,
   CreditCardForm,
   Container,
-  PaymentFaq,
   Slide,
+  Faq,
 } from "@/app/components";
 
 import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
@@ -24,13 +24,13 @@ export default function CreditCardPaymentPage() {
     <Slide direction="right" timeout={500}>
       <Container title={titleMessage}>
         <CreditCardForm installments={installments} price={price} />
-        <PaymentValidDate />
+        <DueDate />
         <InstallmentPhases
           phase={2}
           installments={installments}
           price={price}
         />
-        <PaymentFaq />
+        <Faq />
       </Container>
     </Slide>
   );

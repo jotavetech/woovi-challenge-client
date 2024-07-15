@@ -3,10 +3,10 @@
 import {
   PixPayment as PixPaymentSection,
   InstallmentPhases,
-  PaymentValidDate,
   Container,
-  PaymentFaq,
   Slide,
+  DueDate,
+  Faq,
 } from "@/app/components";
 
 import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
@@ -28,13 +28,13 @@ export default function PixPayment() {
       <Slide direction="left" timeout={500}>
         <Container title={titleMessage}>
           <PixPaymentSection paymentId="123" />
+          <DueDate />
           <InstallmentPhases
             phase={1}
             installments={installments}
             price={price}
           />
-          <PaymentValidDate />
-          <PaymentFaq />
+          <Faq />
         </Container>
       </Slide>
     );
