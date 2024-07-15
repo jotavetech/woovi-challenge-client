@@ -2,88 +2,72 @@
 
 import { Grid } from "@mui/material";
 
-import {
-  CreditCardFormWrapper,
-  CreditCardButton,
-} from "./creditcard-form.styled";
+import { CreditCardFormWrapper } from "./creditcard-form.styled";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { CreditCardField } from "../creditcard-field/creditcard-field";
 
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { FieldValues, FormState, UseFormRegister } from "react-hook-form";
 
-import { FormEvent, useState } from "react";
-
-import { InputField } from "../../..";
-
-import paymentFormSchema from "@/app/helpers/schemas/payment-form-schema";
+import { FormEvent } from "react";
+import { CreditCardButton } from "../creditcard-button/creditcard-button";
+import { CreditCardSelect } from "../creditcard-select/creditcard-select";
 
 interface CreditCardFormProps {
   installments: number;
+  loading: boolean;
   price: number;
+  onSubmit: (e: FormEvent) => void;
+  register: UseFormRegister<FieldValues>;
+  formState: FormState<FieldValues>;
 }
 
-export function CreditCardForm({ installments, price }: CreditCardFormProps) {
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-
-  const { handleSubmit, register, formState } = useForm({
-    resolver: zodResolver(paymentFormSchema),
-  });
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // Simulate a payment confirmation
-    setTimeout(() => {
-      setLoading(false);
-      router.push("/payment/success");
-    }, 2000);
-  };
-
+export function CreditCardForm({
+  installments,
+  loading,
+  price,
+  onSubmit,
+  register,
+  formState,
+}: CreditCardFormProps) {
   return (
     <CreditCardFormWrapper onSubmit={onSubmit}>
       <Grid container spacing={2}>
-        <InputField
+        <CreditCardField
           name="cardHolder"
           label="Nome completo"
           gridExtends="full"
           formState={formState}
           register={register}
         />
-        <InputField
+        <CreditCardField
           name="cpf"
           label="CPF"
           gridExtends="full"
           formState={formState}
           register={register}
         />
-        <InputField
+        <CreditCardField
           name="cardNumber"
           label="Número do cartão"
           formState={formState}
           register={register}
         />
-        <InputField
+        <CreditCardField
           name="expirationDate"
           label="Vencimento"
           gridExtends="half"
           formState={formState}
           register={register}
         />
-        <InputField
+        <CreditCardField
           name="cvv"
           label="CVV"
           gridExtends="half"
           formState={formState}
           register={register}
         />
-        <Grid item xs={12}>
-          <CreditCardButton type="submit" disabled={loading}>
-            {loading ? "Confirmando..." : "Pagar"}
-          </CreditCardButton>
-        </Grid>
+        <CreditCardSelect installments={installments} price={price} />
+        <CreditCardButton loading={loading} />
       </Grid>
     </CreditCardFormWrapper>
   );

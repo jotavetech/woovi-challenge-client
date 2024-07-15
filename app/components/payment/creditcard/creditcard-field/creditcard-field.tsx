@@ -4,7 +4,7 @@ import { Grid, TextField } from "@mui/material";
 
 import { FieldValues, FormState, UseFormRegister } from "react-hook-form";
 
-interface InputFieldProps {
+interface CreditCardFieldProps {
   register: UseFormRegister<FieldValues>;
   formState: FormState<FieldValues>;
   gridExtends?: "full" | "half";
@@ -12,13 +12,13 @@ interface InputFieldProps {
   name: string;
 }
 
-export function InputField({
+export function CreditCardField({
   register,
   formState,
   gridExtends = "full",
   label,
   name,
-}: InputFieldProps) {
+}: CreditCardFieldProps) {
   const { errors } = formState;
 
   const hasError = !!(errors && errors[name]);

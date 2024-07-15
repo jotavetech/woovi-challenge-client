@@ -7,6 +7,7 @@ import {
   Container,
   Slide,
   Faq,
+  CreditCardSection,
 } from "@/app/components";
 
 import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
@@ -23,7 +24,7 @@ export default function CreditCardPaymentPage() {
   return (
     <Slide direction="right" timeout={500}>
       <Container title={titleMessage}>
-        <CreditCardForm installments={installments} price={price} />
+        <CreditCardSection />
         <DueDate />
         <InstallmentPhases
           phase={2}
