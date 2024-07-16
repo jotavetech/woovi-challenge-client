@@ -13,6 +13,7 @@ function validateExpirationDate(expirationDate: string): boolean {
 
   if (month < 1 || month > 12) return false;
   if (year < actualYear) return false;
+  if (year > actualYear + 15) return false;
   if (year === actualYear && month < actualMonth) return false;
 
   return true;
