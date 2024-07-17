@@ -3,7 +3,6 @@
 import {
   InstallmentPhases,
   DueDate,
-  CreditCardForm,
   Container,
   Slide,
   Faq,

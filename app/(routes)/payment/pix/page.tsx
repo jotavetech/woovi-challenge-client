@@ -13,7 +13,7 @@ import { usePaymentOptionStore } from "@/app/stores/usePaymentOptionStore";
 
 import formatCurrency from "@/app/utils/format-currency";
 
-export default function PixPayment() {
+export default function PixPaymentPage() {
   const paymentOption = usePaymentOptionStore((state) => state.option);
 
   const { installments, price } = paymentOption!;
